@@ -1,0 +1,17 @@
+
+int pirPin = 2;     // PIR sensor output pin
+int ledPin = 13;   // LED pin
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  int motion = digitalRead(pirPin);
+
+  if (motion == HIGH) {
+    digitalWrite(ledPin, HIGH);   // Motion detected
+  } else {
+    digitalWrite(ledPin, LOW);    // No motion
+  }   
